@@ -18,6 +18,9 @@ desc = unicode(file(os.path.join('docs', 'source', 'README.rst')).read().strip()
 changes = file(os.path.join('docs', 'source', 'HISTORY.rst')).read().strip()
 long_description = desc + '\n\nChanges:\n========\n\n' + changes
 
+install_requires = [ 'setuptools','BeautifulSoup','pisa','reportlab','pypdf','html5lib' ]
+if sys.version_info < (2,5):
+  install_requires.append('elementtree')
 
 setup(name='zopyx.convert2',
       version=version,
@@ -35,14 +38,7 @@ setup(name='zopyx.convert2',
       include_package_data = True,
       test_suite='nose.collector',
       zip_safe=False,
-      install_requires=[
-          'setuptools', 
-          'elementtree', 
-          'BeautifulSoup', 
-          'pisa', 
-          'reportlab', 
-          'pypdf', 
-          'html5lib'],
+      install_requires=install_requires,
       namespace_packages=['zopyx'],
       entry_points={'console_scripts': ['html-convert = zopyx.convert2.cli:main',]},
       )
