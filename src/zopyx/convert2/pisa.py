@@ -12,7 +12,7 @@ from util import runcmd, which, win32, checkEnvironment, newTempfile, execution_
 from logger import LOG
 
 from exceptions import ConversionError
-from sx.pisa3.pisa_document import pisaDocument
+from xhtml2pdf.document import pisaDocument
 
 
 def html2pdf(html_filename, output_filename=None, **options):

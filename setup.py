@@ -18,7 +18,7 @@ desc = unicode(file(os.path.join('docs', 'source', 'README.rst')).read().strip()
 changes = file(os.path.join('docs', 'source', 'HISTORY.rst')).read().strip()
 long_description = desc + '\n\nChanges:\n========\n\n' + changes
 
-install_requires = [ 'setuptools','BeautifulSoup','pisa','reportlab','pypdf','html5lib' ]
+install_requires = [ 'setuptools','BeautifulSoup','xhtml2pdf','reportlab','pypdf','html5lib' ]
 if sys.version_info < (2,5):
   install_requires.append('elementtree')
 
